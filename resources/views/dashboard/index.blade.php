@@ -609,3 +609,8 @@
     </div>
   </aside>
 @endsection
+
+@section('script')
+  <script src="plugins/morris/morris.min.js" type="text/javascript"></script>
+  <script src="dist/js/pages/dashboard.js" type="text/javascript"></script>
+@endsection

@@ -16,9 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('/dang-nhap.html', 'UserController@getLogin');
+Route::post('/dang-nhap.html', 'UserController@postLogin');
 
-Route::group(['prefix' => '/'],function(){
-
+Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
+	Route::get('/dang-xuat.html', 'UserController@getDangXuat');
 
 	Route::group(['prefix' => 'dashboard'],function(){
 
@@ -34,6 +35,13 @@ Route::group(['prefix' => '/'],function(){
 
 		// Route::get('xoa-quyen/{id}', 'PrivilegeController@getXoaQuyen');
 
+
+	});
+
+	Route::group(['prefix' => 'user'],function(){
+
+		Route::get('/profile/{url}.html', 'UserController@getProfile');
+		Route::post('/profile/{url}.html', 'UserController@postProfile');
 
 	});
 

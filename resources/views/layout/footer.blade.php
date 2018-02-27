@@ -27,7 +27,7 @@ $.widget.bridge('uibutton', $.ui.button);
 <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <!-- Morris.js charts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="plugins/morris/morris.min.js" type="text/javascript"></script>
+
 <!-- Sparkline -->
 <script src="plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
 <!-- jvectormap -->
@@ -49,7 +49,7 @@ $.widget.bridge('uibutton', $.ui.button);
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js" type="text/javascript"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js" type="text/javascript"></script>
+
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js" type="text/javascript"></script>
 
