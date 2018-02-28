@@ -82,14 +82,24 @@
       <li class="treeview">
         <a href="#">
           <i class="fa fa-cog"></i>
-          <span>Cài đặt hệ thống</span>
+          <span>Cài đặt</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-          <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-          <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-cog"></i>
+              <span>Cài đặt Khách Sạn</span>
+              <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="../setting/info/thong-tin-khach-san.html"><i class="fa fa-circle-o"></i> Thông tin khách sạn</a></li>
+              <li><a href="../setting/view/hang-phong.html"><i class="fa fa-circle-o"></i> Hạng Phòng</a></li>
+              <li><a href="../setting/view/tang-lau.html"><i class="fa fa-circle-o"></i> Tầng/Lầu</a></li>
+            </ul>
+          </li>
+          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Backup dữ liệu</a></li>
+          <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Phân quyền</a></li>
         </ul>
       </li>
     </ul>

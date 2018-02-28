@@ -28,7 +28,7 @@ class UserController extends Controller
         if(Auth::attempt(['email'=> $request->email, 'password' => $request->password])){
             return redirect('dashboard');
         }else{
-            return redirect('dang-nhap.html')->with('thongbao','Đăng Nhập Thất Bại');
+            return redirect('dang-nhap.html')->with('loi','Thông Tin Đăng Nhập Không Đúng');
         }
     }
 

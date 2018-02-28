@@ -45,5 +45,31 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 
 	});
 
+	Route::group(['prefix' => 'setting'],function(){
+
+		Route::get('/info/thong-tin-khach-san.html', 'SettingController@getInfo');
+		Route::post('/info/thong-tin-khach-san.html', 'SettingController@postInfo');
+
+		Route::get('/view/hang-phong.html', 'SettingController@getHangPhong');
+
+		Route::get('/add/hang-phong.html', 'SettingController@getAddHangPhong');
+		Route::post('/add/hang-phong.html', 'SettingController@postAddHangPhong');
+
+		Route::get('/edit/{id}/hang-phong.html', 'SettingController@getEditHangPhong');
+		Route::post('/edit/{id}/hang-phong.html', 'SettingController@postEditHangPhong');
+
+		Route::get('/del/{id}/hang-phong.html', 'SettingController@getDelHangPhong');
+
+		Route::get('/view/tang-lau.html', 'SettingController@getViewLau');
+
+		Route::get('/add/tang-lau.html', 'SettingController@getAddLau');
+		Route::post('/add/tang-lau.html', 'SettingController@postAddLau');
+
+		Route::get('/edit/{id}/tang-lau.html', 'SettingController@getEditLau');
+		Route::post('/edit/{id}/tang-lau.html', 'SettingController@postEditLau');
+
+		Route::get('/del/{id}/tang-lau.html', 'SettingController@getDelLau');
+	});
+
 
 });
