@@ -5,6 +5,27 @@
   <strong>Copyright &copy; 2018-2019 <a href="https://www.facebook.com/chauminhthien0212">Châu Minh Thiện</a>.</strong> All rights reserved.
 </footer>
 
+@if(session('modal-danger'))
+  <div class="LockBody" >
+    <div class="modal modal-danger">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close closeModal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title">Cảnh Báo</h4>
+          </div>
+          <div class="modal-body">
+            <p>{{session('modal-danger')}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="closeModal btn btn-outline pull-left" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+  </div>
+@endif
+
 <!-- Control Sidebar -->
 
 
@@ -54,5 +75,22 @@ $.widget.bridge('uibutton', $.ui.button);
 <script src="dist/js/demo.js" type="text/javascript"></script>
 
 @yield('script')
+<script type="text/javascript">
+
+  $(function(){
+
+    $(document).on('click', '.closeModal', function(){
+      $('.LockBody').remove();
+      return false;
+    });
+
+    $('li.treeview').map((i, e) => {
+      var param = $(e).attr('data');
+
+      if(window.location.href.indexOf(param) != -1)
+        $(e).addClass('active');
+    });
+  })
+</script>
 </body>
 </html>

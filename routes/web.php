@@ -71,5 +71,32 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 		Route::get('/del/{id}/tang-lau.html', 'SettingController@getDelLau');
 	});
 
+	
 
+	Route::group(['prefix' => 'cate'],function(){
+
+		Route::group(['prefix' => 'employees'],function(){
+
+			Route::get('/view/danh-sach-nhan-vien.html', 'EmployeesController@getViewNhanVien');
+	
+			Route::get('/add/nhan-vien.html', 'EmployeesController@getAddNhanVien');
+			Route::post('/add/nhan-vien.html', 'EmployeesController@postAddNhanVien');
+	
+			Route::get('/edit/{id}/{url}.html', 'EmployeesController@getEditNhanVien');
+			Route::post('/edit/{id}/{url}.html', 'EmployeesController@postEditNhanVien');
+	
+			Route::get('/del/{id}/{url}.html', 'EmployeesController@getDelNhanVien');
+	
+			Route::get('/getInfo/{id}', 'EmployeesController@getInfo');
+			
+		});
+		
+	});
+
+});
+
+Route::group(['prefix' => 'ajax'],function(){
+
+	Route::get('/getInfo/{id}', 'EmployeesController@getInfo');
+	
 });

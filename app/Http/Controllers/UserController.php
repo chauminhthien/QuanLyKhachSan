@@ -58,7 +58,8 @@ class UserController extends Controller
     			'password.max' 			=> 'PassWord quá dài',
     			
     		]);
-    	$user->name = $request->name;
+    	$user->name         = $request->name;
+        $user->nameKhongDau = changeTitle($request->name);
 
     	if($request->has('password')){
     		$user->password = bcrypt($request->password);
@@ -67,6 +68,6 @@ class UserController extends Controller
     	}
     	$user->save();
 
-    	return redirect('user/profile/chau-minh-thien.html')->with('thongbao','Cập Nhật Thành Công');
+    	return redirect()->back()->with('thongbao','Cập Nhật Thành Công');
     }
 }

@@ -27,32 +27,32 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
       <li class="header">MAIN NAVIGATION</li>
-      <li class="active treeview">
+      <li class="treeview" data="dashboard">
         <a href="../">
           <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
         </a>
       </li>
-      <li class="treeview">
+      <li class="treeview" data="phong">
           <a href="../phong/so-do-phong.html">
             <i class="fa fa-th"></i> <span>Sơ Đồ Phòng</span></i>
           </a>
         </li>
         
-      <li class="treeview">
+      <li class="treeview" data="cate">
         <a href="#">
           <i class="fa fa-files-o"></i>
           <span>Danh mục</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+          <li><a href="../cate/employees/view/danh-sach-nhan-vien.html"><i class="fa fa-circle-o"></i> Quản Lý Nhân Viên</a></li>
           <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
           <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
           <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
         </ul>
       </li>
 
-      <li class="treeview">
+      <li class="treeview" data="thong-ke">
         <a href="#">
           <i class="fa fa-bar-chart-o"></i>
           <span>Thống Kê</span>
@@ -66,7 +66,7 @@
         </ul>
       </li>
 
-      <li class="treeview">
+      <li class="treeview" data="bao-cao">
         <a href="#">
           <i class="fa fa-bar-chart-o"></i>
           <span>Báo Cáo</span>
@@ -79,7 +79,7 @@
           <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
         </ul>
       </li>
-      <li class="treeview">
+      <li class="treeview" data="setting">
         <a href="#">
           <i class="fa fa-cog"></i>
           <span>Cài đặt</span>
