@@ -97,6 +97,20 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 			Route::post('/phan-quyen/{id}/minh-thien.html', 'EmployeesController@postPhanQuyen');
 			
 		});
+
+		Route::group(['prefix' => 'customer'],function(){
+
+			Route::get('/view/danh-sach-khach-hang.html', 'CustomerController@getViewCustomer');
+			
+			Route::get('/add/khach-hang.html', 'CustomerController@getAddCustomer');
+			Route::post('/add/khach-hang.html', 'CustomerController@postAddCustomer');
+
+			Route::get('/edit/{id}/{url}.html', 'CustomerController@getEditCustomer');
+			Route::post('/edit/{id}/{url}.html', 'CustomerController@postEditCustomer');
+
+			Route::get('/del/{id}/{url}.html', 'CustomerController@getDelCustomer');
+			
+		});
 		
 	});
 
@@ -105,5 +119,6 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 Route::group(['prefix' => 'ajax'],function(){
 
 	Route::get('/getInfo/{id}', 'QuyenController@getInfo');
+	Route::get('/getCustomer/{id}', 'CustomerController@getCustomer');
 	
 });

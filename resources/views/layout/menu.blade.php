@@ -46,7 +46,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="../cate/employees/view/danh-sach-nhan-vien.html"><i class="fa fa-circle-o"></i> Quản Lý Nhân Viên</a></li>
-          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
+          <li><a href="../cate/customer/view/danh-sach-khach-hang.html"><i class="fa fa-circle-o"></i> Quản Lý khách hàng</a></li>
           <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
           <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
         </ul>
