@@ -111,6 +111,18 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 			Route::get('/del/{id}/{url}.html', 'CustomerController@getDelCustomer');
 			
 		});
+
+		Route::group(['prefix' => 'phong'],function(){
+
+			Route::get('/view/danh-sach-phong.html', 'PhongController@getViewPhong');
+
+			Route::get('/add/them-phong.html', 'PhongController@getAddPhong');
+			Route::post('/add/them-phong.html', 'PhongController@postAddPhong');
+
+			Route::get('/edit/{id}/{url}.html', 'PhongController@getEditPhong');
+			Route::post('/edit/{id}/{url}.html', 'PhongController@postEditPhong');
+			
+		});
 		
 	});
 
@@ -120,5 +132,6 @@ Route::group(['prefix' => 'ajax'],function(){
 
 	Route::get('/getInfo/{id}', 'QuyenController@getInfo');
 	Route::get('/getCustomer/{id}', 'CustomerController@getCustomer');
-	
+	Route::get('/getGiaPhong/{id}', 'PhongController@getGiaPhong');
+
 });

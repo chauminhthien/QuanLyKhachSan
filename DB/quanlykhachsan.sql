@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2018 at 05:57 PM
+-- Generation Time: Mar 04, 2018 at 05:49 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -19,6 +19,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `quanlykhachsan`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `id` int(255) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `nameKhongDau` varchar(50) NOT NULL,
+  `ngaysinh` varchar(50) NOT NULL,
+  `phone` varchar(30) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `diachi` text,
+  `gioitinh` int(2) NOT NULL DEFAULT '0',
+  `cmnd` text NOT NULL,
+  `remove` int(2) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`id`, `name`, `nameKhongDau`, `ngaysinh`, `phone`, `email`, `diachi`, `gioitinh`, `cmnd`, `remove`) VALUES
+(1, 'Châu Minh Thiện', 'chau-minh-thien', '01.01', '0963501008', 'minhthien1305@gmail.com', '572 luỹ bán bích', 1, '123456', 0),
+(2, 'Ai My Tran', 'ai-my-tran', '11/11/2011', '(011) 111-1111', 'chauminhthien0212@gmail.com', NULL, 0, '0125852', 0);
 
 -- --------------------------------------------------------
 
@@ -83,7 +110,56 @@ CREATE TABLE `lau` (
 INSERT INTO `lau` (`id`, `name`, `vitri`, `mota`) VALUES
 (1, 'Lầu 1', NULL, NULL),
 (2, 'Lầu 2', NULL, NULL),
-(3, 'lầu 3', NULL, NULL);
+(3, 'lầu 3', '1', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `phong`
+--
+
+CREATE TABLE `phong` (
+  `id` int(255) NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `nameKhongDau` varchar(50) DEFAULT NULL,
+  `st` int(3) NOT NULL DEFAULT '0',
+  `remove` int(2) NOT NULL DEFAULT '0',
+  `gia` int(255) DEFAULT NULL,
+  `idHangPhong` int(255) DEFAULT NULL,
+  `idLau` int(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `phong`
+--
+
+INSERT INTO `phong` (`id`, `name`, `nameKhongDau`, `st`, `remove`, `gia`, `idHangPhong`, `idLau`) VALUES
+(1, '101', '101', 0, 0, 150000, 1, 1),
+(2, 'A101', 'a101', 0, 0, 150000, 1, 2),
+(3, 'test xoá', 'test-xoa', 0, 0, 150000, 1, 1),
+(4, 'Minh Thiện', 'minh-thien', 0, 0, 1500000, 3, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quyen`
+--
+
+CREATE TABLE `quyen` (
+  `id` int(255) NOT NULL,
+  `name` varchar(90) NOT NULL,
+  `url` text NOT NULL,
+  `remove` int(2) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `quyen`
+--
+
+INSERT INTO `quyen` (`id`, `name`, `url`, `remove`) VALUES
+(1, 'Dashboard', 'dashboard', 0),
+(2, 'Quản lý nhân viên', 'cate/employees/view/danh-sach-nhan-vien.html', 0),
+(3, 'test xoa', 'ascasca', 1);
 
 -- --------------------------------------------------------
 
@@ -99,19 +175,28 @@ CREATE TABLE `users` (
   `password` text NOT NULL,
   `remember_token` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `remove` int(2) NOT NULL DEFAULT '0',
+  `quyen` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `nameKhongDau`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Châu Minh Thiện', 'chau-minh-thien', 'chauminhthien0212@gmail.com', '$2y$10$limtzCE7nM7jIm7peZh07uEHQrh8VnOYJ3RManFOQbwWQJRk6ut/C', 'WLHU94k5ndFsj3em7lqoevzVOoPvO7azZJBKxua65Rk6dEhww7EboffIFECB', '2018-02-28 14:54:45', '2018-02-27 07:50:42');
+INSERT INTO `users` (`id`, `name`, `nameKhongDau`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `remove`, `quyen`) VALUES
+(1, 'Châu Minh Thiện', 'chau-minh-thien', 'chauminhthien0212@gmail.com', '$2y$10$limtzCE7nM7jIm7peZh07uEHQrh8VnOYJ3RManFOQbwWQJRk6ut/C', 'jDpdLHFU5gKkw7T6FXY9zD9e268AY306hcgMGAwRlqMAYysUZ95WQSrfh8iQ', '2018-03-03 02:57:52', '2018-02-27 07:50:42', 0, '1'),
+(2, 'Minh Thiện', 'minh-thien', 'minhthien1305@gmail.com', '$2y$10$limtzCE7nM7jIm7peZh07uEHQrh8VnOYJ3RManFOQbwWQJRk6ut/C', '6XUl36TYN6GjanPndKosL6gkdni6lDPztsxVcNE2f41vpdAheU1gei4zdr6z', '2018-03-04 08:09:59', '2018-03-04 01:09:59', 0, '1,2');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `hangphong`
@@ -132,6 +217,18 @@ ALTER TABLE `lau`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `phong`
+--
+ALTER TABLE `phong`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `quyen`
+--
+ALTER TABLE `quyen`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -142,25 +239,40 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `hangphong`
 --
 ALTER TABLE `hangphong`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `infokhachsan`
 --
 ALTER TABLE `infokhachsan`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `lau`
 --
 ALTER TABLE `lau`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `phong`
+--
+ALTER TABLE `phong`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `quyen`
+--
+ALTER TABLE `quyen`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

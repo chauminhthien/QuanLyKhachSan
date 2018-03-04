@@ -26,7 +26,7 @@
         <div class="small-box bg-aqua">
           <div class="inner">
             <h3>150</h3>
-            <p>New Orders</p>
+            <p>Khách hàng</p>
           </div>
           <div class="icon">
             <i class="ion ion-bag"></i>
@@ -39,7 +39,7 @@
         <div class="small-box bg-green">
           <div class="inner">
             <h3>53<sup style="font-size: 20px">%</sup></h3>
-            <p>Bounce Rate</p>
+            <p>Hoá Đơn</p>
           </div>
           <div class="icon">
             <i class="ion ion-stats-bars"></i>
@@ -52,7 +52,7 @@
         <div class="small-box bg-yellow">
           <div class="inner">
             <h3>44</h3>
-            <p>User Registrations</p>
+            <p>Nhân Viên</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
@@ -65,7 +65,7 @@
         <div class="small-box bg-red">
           <div class="inner">
             <h3>65</h3>
-            <p>Unique Visitors</p>
+            <p>Phòng</p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
@@ -273,32 +273,7 @@
         </div><!-- /.box -->
 
         <!-- quick email widget -->
-        <div class="box box-info">
-          <div class="box-header">
-            <i class="fa fa-envelope"></i>
-            <h3 class="box-title">Quick Email</h3>
-            <!-- tools box -->
-            <div class="pull-right box-tools">
-              <button class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
-            </div><!-- /. tools -->
-          </div>
-          <div class="box-body">
-            <form action="#" method="post">
-              <div class="form-group">
-                <input type="email" class="form-control" name="emailto" placeholder="Email to:" />
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" placeholder="Subject" />
-              </div>
-              <div>
-                <textarea class="textarea" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-              </div>
-            </form>
-          </div>
-          <div class="box-footer clearfix">
-            <button class="pull-right btn btn-default" id="sendEmail">Send <i class="fa fa-arrow-circle-right"></i></button>
-          </div>
-        </div>
+        
 
       </section><!-- /.Left col -->
       <!-- right col (We are only adding the ID to make the widgets sortable)-->
@@ -398,41 +373,7 @@
           </div><!-- /.box-body -->
           <div class="box-footer text-black">
             <div class="row">
-              <div class="col-sm-6">
-                <!-- Progress bars -->
-                <div class="clearfix">
-                  <span class="pull-left">Task #1</span>
-                  <small class="pull-right">90%</small>
-                </div>
-                <div class="progress xs">
-                  <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
-                </div>
-
-                <div class="clearfix">
-                  <span class="pull-left">Task #2</span>
-                  <small class="pull-right">70%</small>
-                </div>
-                <div class="progress xs">
-                  <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
-                </div>
-              </div><!-- /.col -->
-              <div class="col-sm-6">
-                <div class="clearfix">
-                  <span class="pull-left">Task #3</span>
-                  <small class="pull-right">60%</small>
-                </div>
-                <div class="progress xs">
-                  <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
-                </div>
-
-                <div class="clearfix">
-                  <span class="pull-left">Task #4</span>
-                  <small class="pull-right">40%</small>
-                </div>
-                <div class="progress xs">
-                  <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
-                </div>
-              </div><!-- /.col -->
+              
             </div><!-- /.row -->
           </div>
         </div><!-- /.box -->
