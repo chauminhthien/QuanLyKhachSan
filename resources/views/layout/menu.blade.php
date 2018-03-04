@@ -99,7 +99,7 @@
             </ul>
           </li>
           <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Backup dữ liệu</a></li>
-          <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Phân quyền</a></li>
+          <li><a href="../setting/quyen/view/danh-sach.html"><i class="fa fa-circle-o"></i> Cấu hình quyền</a></li>
         </ul>
       </li>
     </ul>

@@ -17,24 +17,13 @@ Route::get('/', function () {
 
 Route::get('/dang-nhap.html', 'UserController@getLogin');
 Route::post('/dang-nhap.html', 'UserController@postLogin');
+Route::get('/dang-xuat.html', 'UserController@getDangXuat');
 
 Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
-	Route::get('/dang-xuat.html', 'UserController@getDangXuat');
 
 	Route::group(['prefix' => 'dashboard'],function(){
 
-        Route::get('/', 'DashboardController@index');
-
-		// Route::get('danh-sach-quyen', 'PrivilegeController@getDSQuyen');
-
-		// Route::get('them-quyen-moi', 'PrivilegeController@getThemQuyen');
-		// Route::post('them-quyen-moi', 'PrivilegeController@postThemQuyen');
-
-		// Route::get('sua-quyen/{id}', 'PrivilegeController@getSuaQuyen');
-		// Route::post('sua-quyen/{id}', 'PrivilegeController@postSuaQuyen');
-
-		// Route::get('xoa-quyen/{id}', 'PrivilegeController@getXoaQuyen');
-
+    Route::get('/', 'DashboardController@index');
 
 	});
 
@@ -69,6 +58,21 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 		Route::post('/edit/{id}/tang-lau.html', 'SettingController@postEditLau');
 
 		Route::get('/del/{id}/tang-lau.html', 'SettingController@getDelLau');
+
+		Route::group(['prefix' => 'quyen'],function(){
+
+			Route::get('/view/danh-sach.html', 'QuyenController@getView');
+
+			Route::get('/them-quyen-moi.html', 'QuyenController@getAddQuyen');
+			Route::post('/them-quyen-moi.html', 'QuyenController@postAddQuyen');
+
+			Route::get('/edit/{id}/sua-quyen.html', 'QuyenController@getEditQuyen');
+			Route::post('/edit/{id}/sua-quyen.html', 'QuyenController@postEditQuyen');
+
+			Route::get('/del/{id}/quyen.html', 'QuyenController@getDelQuyen');
+			
+		});
+
 	});
 
 	
@@ -88,6 +92,9 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 			Route::get('/del/{id}/{url}.html', 'EmployeesController@getDelNhanVien');
 	
 			Route::get('/getInfo/{id}', 'EmployeesController@getInfo');
+
+			Route::get('/phan-quyen/{id}/minh-thien.html', 'EmployeesController@getPhanQuyen');
+			Route::post('/phan-quyen/{id}/minh-thien.html', 'EmployeesController@postPhanQuyen');
 			
 		});
 		
@@ -97,6 +104,6 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 
 Route::group(['prefix' => 'ajax'],function(){
 
-	Route::get('/getInfo/{id}', 'EmployeesController@getInfo');
+	Route::get('/getInfo/{id}', 'QuyenController@getInfo');
 	
 });

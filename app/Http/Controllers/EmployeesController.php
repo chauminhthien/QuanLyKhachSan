@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
+use App\Quyen;
 
 class EmployeesController extends Controller
 {
@@ -113,5 +114,34 @@ class EmployeesController extends Controller
                 </div><!-- /.modal-content -->
                 </div><!-- /.modal-dialog -->
             </div></div>';
+    }
+
+    public function getPhanQuyen($id){
+        if(Auth::user()->id == $id)
+            return redirect()->back()->with(['modal-danger' => 'Bạn không được sửa quyền của bạn']);
+
+        $user = User::find($id);
+        $quyen = Quyen::where('remove', 0)->get();
+        return view('cate.employees.quyen', ['user' => $user, 'quyen' => $quyen]);
+    }
+
+    public function postPhanQuyen(Request $request, $id){
+        if(Auth::user()->id == $id)
+            return redirect()->back()->with(['modal-danger' => 'Bạn không được sửa quyền của bạn']);
+
+        $user = User::find($id);
+        $quyen = '';
+
+        if(count($request->quyen) > 0){
+            foreach($request->quyen as $value){
+                $quyen .= $value . ',';
+            };
+            $quyen = substr($quyen, 0, -1);
+        }
+        
+        $user->quyen = $quyen;
+        $user->save();
+
+        return redirect()->back()->with(['thongbao' => 'Cập Nhật Quyền thành công']);
     }
 }

@@ -57,6 +57,7 @@
                             <a href="#" id="'.$u->id.'" class="viewEml btn btn-info btn-flat"><i class="fa fa-eye"></i></a>';
                       if($u->id != $userAdmin->id){
                         echo'
+                        <a href="../cate/employees/phan-quyen/'.$u->id.'/'.$u->nameKhongDau.'.html" class="btn btn-warning btn-flat"><i class="fa  fa-eyedropper"></i></a>
                         <a href="../cate/employees/del/'.$u->id.'/'.$u->nameKhongDau.'.html" class="btn btn-danger btn-flat"><i class="fa fa-close"></i></a>';
                       };
                     @endphp

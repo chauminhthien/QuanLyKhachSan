@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 use Illuminate\Support\Facades\Auth;
 
 use Closure;
+use App\Quyen;
 
 class UserMiddleware
 {
@@ -14,12 +15,35 @@ class UserMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
+    
     public function handle($request, Closure $next)
     {
-        
-        if(Auth::check()){
+        $root = '/QuanLyKhachSan/';
+        $url = $_SERVER["REQUEST_URI"];
+
+        if(Auth::check() && Auth::user()->remove == 0){
+            $quyens = Auth::user()->quyen;
+            
+            $quyen = explode(',', $quyens);
+            // if(count($quyen) > 0){
+            //     foreach($quyen as $id){
+            //         $link = Quyen::find($id);
+            //         $path = $root . $link->url;
+            //         $url = substr($url, 0, strlen($path));
+            //         if($url == $path){
+            //             view()->share('userAdmin', Auth::user());
+            //             return $next($request);
+            //         }else{
+            //             return redirect()->back()->with(['modal-danger' => 'Bạn Chưa Có Quyền Truy Cập']);
+            //         }
+            //     }
+            // }else{
+            //     return redirect()->back()->with(['loi' => 'Bạn Chưa Có Quyền Truy Cập']);
+            // }
+
             view()->share('userAdmin', Auth::user());
             return $next($request);
+            
         }else{
             return redirect('dang-nhap.html');
         }
