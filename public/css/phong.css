@@ -1,0 +1,101 @@
+.phong.room-0 {
+  background: #90d46e;
+}
+.phong{
+  height: 190px;
+  border-radius: 3px;
+}
+.phong .box-cus, .phong .box-room {
+  text-align: center;
+}
+.phong .box-room .b-name {
+  font-size: 24px;
+  white-space: nowrap;
+  color: aliceblue;
+}
+.broom-top {
+  padding: 5px;
+  padding-bottom: 5px;
+}
+.broom-ct-button {
+  background: rgba(0,0,0,0.123);
+  background: #74ba51;
+  position: absolute;
+  width: 100%;
+  height: 38px;
+  bottom: 0;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: #fff;
+}
+.box-ft {
+  text-align: center;
+  line-height: 38px;
+  font-size: 17px;
+  cursor: pointer;
+  color: #fff;
+}
+.box-ft .bt-full {
+  color: #fff;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.phong.room-1 {
+  background: #ed9457;
+}
+
+.phong.room-2 {
+  background: #0008ff6b;
+}
+.phong.room-3 {
+  background: #ed5757;
+}
+.phong.room-1 .broom-ct-button{
+  background: rgba(0,0,0,0.123);
+}
+.phong.room-2 .broom-ct-button{
+  background: rgba(0,0,0,0.123);
+}
+.phong.room-3 .broom-ct-button{
+  background: rgba(0,0,0,0.123);
+}
+
+.broom-ct > div.broom-ct-it {
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.col-md-3{
+  width: 24%;
+  margin: 5px;
+}
+a.phongClick.active{
+  background: orange;
+}
+
+.btn-menu {
+  width: 100%;
+  text-align: left;
+  padding-left: 5px !important;
+  min-height: 132px;
+  text-align: center;
+  font-size: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  color: #656565;
+  -webkit-transition: ease all 0.5s;
+}
+
+.btn-menu .sdp-icon-menu {
+  display: block;
+  font-size: 36px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.btn-menu:hover {
+  background: orange;
+  color: #fff;
+}
