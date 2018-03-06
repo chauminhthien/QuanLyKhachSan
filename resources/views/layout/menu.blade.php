@@ -48,7 +48,7 @@
           <li><a href="../cate/employees/view/danh-sach-nhan-vien.html"><i class="fa fa-circle-o"></i> Quản Lý Nhân Viên</a></li>
           <li><a href="../cate/customer/view/danh-sach-khach-hang.html"><i class="fa fa-circle-o"></i> Quản Lý khách hàng</a></li>
           <li><a href="../cate/phong/view/danh-sach-phong.html"><i class="fa fa-circle-o"></i> Quản lý phòng</a></li>
-          <li><a href="../cate/update.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+          <li><a href="../cate/dat-phong/danh-sach.html"><i class="fa fa-circle-o"></i> Danh sách đặt phòng</a></li>
         </ul>
       </li>
 

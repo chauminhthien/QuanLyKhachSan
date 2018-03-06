@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2018 at 05:49 PM
+-- Generation Time: Mar 06, 2018 at 05:21 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -46,6 +46,28 @@ CREATE TABLE `customer` (
 INSERT INTO `customer` (`id`, `name`, `nameKhongDau`, `ngaysinh`, `phone`, `email`, `diachi`, `gioitinh`, `cmnd`, `remove`) VALUES
 (1, 'Châu Minh Thiện', 'chau-minh-thien', '01.01', '0963501008', 'minhthien1305@gmail.com', '572 luỹ bán bích', 1, '123456', 0),
 (2, 'Ai My Tran', 'ai-my-tran', '11/11/2011', '(011) 111-1111', 'chauminhthien0212@gmail.com', NULL, 0, '0125852', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `danhsachdatphong`
+--
+
+CREATE TABLE `danhsachdatphong` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `cmnd` varchar(50) DEFAULT NULL,
+  `phone` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `tgianden` int(255) DEFAULT NULL,
+  `tgiandi` int(255) DEFAULT NULL,
+  `idPhong` int(255) DEFAULT NULL,
+  `pthucthanhtoan` varchar(10) DEFAULT NULL,
+  `tientratruoc` int(255) NOT NULL DEFAULT '0',
+  `remove` int(2) NOT NULL DEFAULT '0',
+  `st` int(2) NOT NULL DEFAULT '0',
+  `phongdoi` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -126,18 +148,19 @@ CREATE TABLE `phong` (
   `remove` int(2) NOT NULL DEFAULT '0',
   `gia` int(255) DEFAULT NULL,
   `idHangPhong` int(255) DEFAULT NULL,
-  `idLau` int(255) DEFAULT NULL
+  `idLau` int(255) DEFAULT NULL,
+  `isU` int(2) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `phong`
 --
 
-INSERT INTO `phong` (`id`, `name`, `nameKhongDau`, `st`, `remove`, `gia`, `idHangPhong`, `idLau`) VALUES
-(1, '101', '101', 0, 0, 150000, 1, 1),
-(2, 'A101', 'a101', 0, 0, 150000, 1, 2),
-(3, 'test xoá', 'test-xoa', 0, 0, 150000, 1, 1),
-(4, 'Minh Thiện', 'minh-thien', 0, 0, 1500000, 3, 2);
+INSERT INTO `phong` (`id`, `name`, `nameKhongDau`, `st`, `remove`, `gia`, `idHangPhong`, `idLau`, `isU`) VALUES
+(1, '101', '101', 0, 0, 150000, 1, 1, 0),
+(2, 'A101', 'a101', 0, 0, 150000, 1, 2, 0),
+(3, 'test xoá', 'test-xoa', 3, 0, 150000, 1, 1, 1),
+(4, 'Minh Thiện', 'minh-thien', 0, 0, 1500000, 3, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -199,6 +222,12 @@ ALTER TABLE `customer`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `danhsachdatphong`
+--
+ALTER TABLE `danhsachdatphong`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `hangphong`
 --
 ALTER TABLE `hangphong`
@@ -243,6 +272,11 @@ ALTER TABLE `users`
 --
 ALTER TABLE `customer`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `danhsachdatphong`
+--
+ALTER TABLE `danhsachdatphong`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `hangphong`
 --

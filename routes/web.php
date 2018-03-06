@@ -27,6 +27,12 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 
 	});
 
+	Route::group(['prefix' => 'phong'],function(){
+
+		Route::get('/so-do-phong.html', 'PhongController@getSoDoPhong');
+		
+	});
+
 	Route::group(['prefix' => 'user'],function(){
 
 		Route::get('/profile/{url}.html', 'UserController@getProfile');
@@ -133,5 +139,8 @@ Route::group(['prefix' => 'ajax'],function(){
 	Route::get('/getInfo/{id}', 'QuyenController@getInfo');
 	Route::get('/getCustomer/{id}', 'CustomerController@getCustomer');
 	Route::get('/getGiaPhong/{id}', 'PhongController@getGiaPhong');
-
+	Route::get('/getViewPhong/{id}', 'PhongController@getViewSdPhong');
+	Route::get('/getViewMorePhong/{id}/{st}', 'PhongController@getViewMorePhong');
+	Route::get('/postEditStPhong/{id}/{data}', 'PhongController@postEditStPhong');
+	
 });
