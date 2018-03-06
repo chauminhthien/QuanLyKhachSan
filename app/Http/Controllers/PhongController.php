@@ -131,6 +131,9 @@ class PhongController extends Controller
         $phong = Phong::where(['remove'=> 0, 'id' => $id])->get()[0];
         $txt = '<div class="Alert-Root">
                     <div class="Alert-Wrapper ">
+                    <div>
+                        <h2>Phòng: <i><strong>'. $phong->name .'</strong></i></h2>
+                    </div>
                     <div class="Alert-Content">';
                         
         if($phong->st == 0 && $phong->isU == 0){
