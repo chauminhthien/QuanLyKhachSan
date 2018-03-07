@@ -40,7 +40,7 @@
       <form role="form" action="" method="post">
           <div class="box-body">
             <div class="form-group">
-              <label for="name">Tên Lầu</label>
+              <label for="name">Tên Quyền</label>
               <input type="text" name="name" required class="form-control" id="name" placeholder="Nhập Tên Quyền">
             </div>
             <div class="form-group">

@@ -30,6 +30,7 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 	Route::group(['prefix' => 'phong'],function(){
 
 		Route::get('/so-do-phong.html', 'PhongController@getSoDoPhong');
+		Route::get('/dat-phong/{id}/dat-phong-moi.html', 'DatPhongController@getNewDatPhongById');
 		
 	});
 
@@ -45,25 +46,29 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 		Route::get('/info/thong-tin-khach-san.html', 'SettingController@getInfo');
 		Route::post('/info/thong-tin-khach-san.html', 'SettingController@postInfo');
 
-		Route::get('/view/hang-phong.html', 'SettingController@getHangPhong');
+		Route::group(['prefix' => 'hang-phong'],function(){
+			Route::get('/view/hang-phong.html', 'SettingController@getHangPhong');
 
-		Route::get('/add/hang-phong.html', 'SettingController@getAddHangPhong');
-		Route::post('/add/hang-phong.html', 'SettingController@postAddHangPhong');
+			Route::get('/add/hang-phong.html', 'SettingController@getAddHangPhong');
+			Route::post('/add/hang-phong.html', 'SettingController@postAddHangPhong');
+	
+			Route::get('/edit/{id}/hang-phong.html', 'SettingController@getEditHangPhong');
+			Route::post('/edit/{id}/hang-phong.html', 'SettingController@postEditHangPhong');
+	
+			Route::get('/del/{id}/hang-phong.html', 'SettingController@getDelHangPhong');
+		});
 
-		Route::get('/edit/{id}/hang-phong.html', 'SettingController@getEditHangPhong');
-		Route::post('/edit/{id}/hang-phong.html', 'SettingController@postEditHangPhong');
+		Route::group(['prefix' => 'lau'],function(){
+			Route::get('/view/tang-lau.html', 'SettingController@getViewLau');
 
-		Route::get('/del/{id}/hang-phong.html', 'SettingController@getDelHangPhong');
+			Route::get('/add/tang-lau.html', 'SettingController@getAddLau');
+			Route::post('/add/tang-lau.html', 'SettingController@postAddLau');
 
-		Route::get('/view/tang-lau.html', 'SettingController@getViewLau');
+			Route::get('/edit/{id}/tang-lau.html', 'SettingController@getEditLau');
+			Route::post('/edit/{id}/tang-lau.html', 'SettingController@postEditLau');
 
-		Route::get('/add/tang-lau.html', 'SettingController@getAddLau');
-		Route::post('/add/tang-lau.html', 'SettingController@postAddLau');
-
-		Route::get('/edit/{id}/tang-lau.html', 'SettingController@getEditLau');
-		Route::post('/edit/{id}/tang-lau.html', 'SettingController@postEditLau');
-
-		Route::get('/del/{id}/tang-lau.html', 'SettingController@getDelLau');
+			Route::get('/del/{id}/tang-lau.html', 'SettingController@getDelLau');
+		});
 
 		Route::group(['prefix' => 'quyen'],function(){
 
@@ -129,6 +134,14 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 			Route::post('/edit/{id}/{url}.html', 'PhongController@postEditPhong');
 			
 		});
+
+		Route::group(['prefix' => 'dat-phong'],function(){
+
+			Route::get('/danh-sach.html', 'DatPhongController@getViewDatPhong');
+			Route::get('/chi-tiet/{id}/dat-phong.html', 'DatPhongController@getViewDetailDatPhong');
+			Route::get('/dat-phong-moi.html', 'DatPhongController@getNewDatPhong');
+			
+		});
 		
 	});
 
@@ -136,7 +149,7 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 
 Route::group(['prefix' => 'ajax'],function(){
 
-	Route::get('/getInfo/{id}', 'QuyenController@getInfo');
+	Route::get('/getInfo/{id}', 'EmployeesController@getInfo');
 	Route::get('/getCustomer/{id}', 'CustomerController@getCustomer');
 	Route::get('/getGiaPhong/{id}', 'PhongController@getGiaPhong');
 	Route::get('/getViewPhong/{id}', 'PhongController@getViewSdPhong');

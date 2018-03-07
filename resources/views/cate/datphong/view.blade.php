@@ -1,19 +1,18 @@
 @extends('layout.index')
 
 @section('title')
- Cấu hình thông tin Tầng/Lầu
+  Danh Sách Đặt Phòng
 @endsection
 
 @section('content-header')
   <section class="content-header">
     <h1>
-      Danh Sách Các Tầng/Lầu
+      Danh Sách Đặt Phòng
     </h1>
     <ol class="breadcrumb">
       <li><a href="../"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Cài Đặt</li>
-      <li class="active">Cài Đặt Khách Sạn</li>
-      <li class="active">Tầng/Lầu</li>
+      <li class="active">Danh Mục</li>
+      <li class="active">Danh Sách Đặt Phòng</li>
     </ol>
   </section>
 @endsection
@@ -22,8 +21,8 @@
   <section class="content">
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h3 class="box-title">Danh Sách Các Tầng/Lầu</h3>
-        <a href="../setting/lau/add/tang-lau.html" class="btn btn-primary btn-flat"><i class="fa fa-plus"></i> Thêm Mới</a>
+        <h3 class="box-title">Danh Sách Đặt Phòng</h3>
+        <a href="../cate/dat-phong/dat-phong-moi.html" class="btn btn-primary btn-flat"><i class="fa fa-plus"></i> Đặt Phòng</a>
       </div><!-- /.box-header -->
       <!-- form start -->
       @if(session('thongbao'))
@@ -36,22 +35,23 @@
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Vị Trí</th>
-                <th>Mô Tả</th>
+                <th>Tên Khách</th>
+                <th>Tên Phòng</th>
+                <th>Số Điện Thoại</th>
+                <th>Thời Gian Đến</th>
                 <th>Hành Động</th>
               </tr>
             </thead>
             <tbody>
-              @foreach($lau as $l)
+              @foreach($datphong as $dp)
                 <tr>
-                  <td>{{$l->id}}</td>
-                  <td>{{$l->name}}</td>
-                  <td>{{$l->vitri}}</td>
-                  <td>{{$l->mota}}</td>
+                  <td>{{$dp->id}}</td>
+                  <td>{{$dp->name}}</td>
+                  <td>{{$dp->getPhong->name}}</td>
+                  <td>{{$dp->phone}}</td>
+                  <td>{{ date('d-m-Y',$dp->tgianden) }}</td>
                   <td>
-                    <a href="../setting/lau/edit/{{{$l->id}}}/tang-lau.html" class="btn btn-primary btn-flat"><i class="fa fa-edit"></i></a>
-                    <a href="../setting/lau/del/{{{$l->id}}}/tang-lau.html" class="btn btn-danger btn-flat"><i class="fa fa-close"></i></a>
+                    <a href="../cate/dat-phong/chi-tiet/{{$dp->id}}/dat-phong.html" class="btn btn-info btn-flat"><i class="fa fa-eye"></i></a>
                   </td>
                 </tr>
               @endforeach

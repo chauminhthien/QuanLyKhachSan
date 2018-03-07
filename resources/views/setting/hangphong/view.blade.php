@@ -23,7 +23,7 @@
     <div class="box box-primary">
       <div class="box-header with-border">
         <h3 class="box-title">Danh Sách Các Hạng Phòng</h3>
-        <a href="../setting/add/hang-phong.html" class="btn btn-primary btn-flat"><i class="fa fa-plus"></i> Thêm Mới</a>
+        <a href="../setting/hang-phong/add/hang-phong.html" class="btn btn-primary btn-flat"><i class="fa fa-plus"></i> Thêm Mới</a>
       </div><!-- /.box-header -->
       <!-- form start -->
       @if(session('thongbao'))
@@ -48,8 +48,8 @@
                   <td>{{$hp->name}}</td>
                   <td>{{ number_format($hp->gia)}} <sup>đ</sup></td>
                   <td>
-                    <a href="../setting/edit/{{{$hp->id}}}/hang-phong.html" class="btn btn-primary btn-flat"><i class="fa fa-edit"></i></a>
-                    <a href="../setting/del/{{{$hp->id}}}/hang-phong.html" class="btn btn-danger btn-flat"><i class="fa fa-close"></i></a>
+                    <a href="../setting/hang-phong/edit/{{$hp->id}}/hang-phong.html" class="btn btn-primary btn-flat"><i class="fa fa-edit"></i></a>
+                    <a href="../setting/hang-phong/del/{{$hp->id}}/hang-phong.html" class="btn btn-danger btn-flat"><i class="fa fa-close"></i></a>
                   </td>
                 </tr>
               @endforeach

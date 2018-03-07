@@ -138,7 +138,7 @@ class PhongController extends Controller
                         
         if($phong->st == 0 && $phong->isU == 0){
             $txt .= '<div class="col-md-4 col-sm-4 col-xs-6">
-                        <a href="../phong/dat-phong/'. $id .'/dat-phong.html" class="btn waves-effect waves-light btn-menu"  title="Đặt phòng">
+                        <a href="../phong/dat-phong/'. $id .'/dat-phong-moi.html" class="btn waves-effect waves-light btn-menu"  title="Đặt phòng">
                             <i class="sdp-icon-menu icon-add-song fa fa-plus"></i>Đặt phòng
                         </a>
                     </div>
@@ -149,17 +149,17 @@ class PhongController extends Controller
                     </div>';
         }else if($phong->isU == 1){
             $txt .= '<div class="col-md-4 col-sm-4 col-xs-6">
-                        <a href="../phong/chi-tiet/'. $id .'/dat-phong.html" class="btn waves-effect waves-light btn-menu"  title="Đặt phòng">
+                        <a href="../cate/dat-phong/chi-tiet/'. $id .'/dat-phong.html" class="btn waves-effect waves-light btn-menu"  title="Đặt phòng">
                             <i class="sdp-icon-menu icon-add-song fa fa-eye"></i>Chi Tiết
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-6">
-                        <a href="../phong/chi-tiet/'. $id .'/dat-phong.html" class="btn waves-effect waves-light btn-menu"  title="Đặt phòng">
+                        <a href="../cate/dat-phong/chi-tiet/'. $id .'/dat-phong.html" class="btn waves-effect waves-light btn-menu"  title="Đặt phòng">
                             <i class="sdp-icon-menu icon-add-song fa fa-sign-out"></i>Trả Phòng
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-6">
-                        <a href="../phong/chi-tiet/'. $id .'/dat-phong.html" class="btn waves-effect waves-light btn-menu"  title="Đặt phòng">
+                        <a class="btn waves-effect waves-light btn-menu"  title="Đặt phòng">
                             <i class="sdp-icon-menu icon-add-song fa fa-refresh"></i>Đổi Phòng
                         </a>
                     </div>';

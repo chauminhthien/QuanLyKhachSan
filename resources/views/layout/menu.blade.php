@@ -49,6 +49,8 @@
           <li><a href="../cate/customer/view/danh-sach-khach-hang.html"><i class="fa fa-circle-o"></i> Quản Lý khách hàng</a></li>
           <li><a href="../cate/phong/view/danh-sach-phong.html"><i class="fa fa-circle-o"></i> Quản lý phòng</a></li>
           <li><a href="../cate/dat-phong/danh-sach.html"><i class="fa fa-circle-o"></i> Danh sách đặt phòng</a></li>
+          <li><a href="../update.html"><i class="fa fa-circle-o"></i> Quản lý tiện nghi</a></li>
+          <li><a href="../update.html"><i class="fa fa-circle-o"></i> Quản lý dịch vụ</a></li>
         </ul>
       </li>
 
@@ -59,10 +61,8 @@
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-          <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-          <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+          <li><a href="../update.html"><i class="fa fa-circle-o"></i> Thống Kê Đặt Phòng</a></li>
+          <li><a href="../update.html"><i class="fa fa-circle-o"></i> Thống Kê Doanh Thu</a></li>
         </ul>
       </li>
 
@@ -73,10 +73,10 @@
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-          <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-          <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+          <li><a href="../update.html"><i class="fa fa-circle-o"></i> Báo Cáo Tiền Phòng</a></li>
+          <li><a href="../update.html"><i class="fa fa-circle-o"></i> Báo Cáo Doanh Thu</a></li>
+          <li><a href="../update.html"><i class="fa fa-circle-o"></i> Báo Cáo Dịch Vụ</a></li>
+          <li><a href="../update.html"><i class="fa fa-circle-o"></i> Báo Cáo Thu Chi</a></li>
         </ul>
       </li>
       <li class="treeview" data="setting">
@@ -94,8 +94,8 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="../setting/info/thong-tin-khach-san.html"><i class="fa fa-circle-o"></i> Thông tin khách sạn</a></li>
-              <li><a href="../setting/view/hang-phong.html"><i class="fa fa-circle-o"></i> Hạng Phòng</a></li>
-              <li><a href="../setting/view/tang-lau.html"><i class="fa fa-circle-o"></i> Tầng/Lầu</a></li>
+              <li><a href="../setting/hang-phong/view/hang-phong.html"><i class="fa fa-circle-o"></i> Hạng Phòng</a></li>
+              <li><a href="../setting/lau/view/tang-lau.html"><i class="fa fa-circle-o"></i> Tầng/Lầu</a></li>
             </ul>
           </li>
           <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Backup dữ liệu</a></li>

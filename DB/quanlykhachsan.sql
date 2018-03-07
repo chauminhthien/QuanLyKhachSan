@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2018 at 05:21 PM
+-- Generation Time: Mar 07, 2018 at 07:43 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -66,8 +66,15 @@ CREATE TABLE `danhsachdatphong` (
   `tientratruoc` int(255) NOT NULL DEFAULT '0',
   `remove` int(2) NOT NULL DEFAULT '0',
   `st` int(2) NOT NULL DEFAULT '0',
-  `phongdoi` int(255) NOT NULL
+  `phongdoi` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `danhsachdatphong`
+--
+
+INSERT INTO `danhsachdatphong` (`id`, `name`, `cmnd`, `phone`, `email`, `tgianden`, `tgiandi`, `idPhong`, `pthucthanhtoan`, `tientratruoc`, `remove`, `st`, `phongdoi`) VALUES
+(1, 'Châu Minh Thiện', '123456789', '0963501008', 'minhthien1305@gmail.com', 11111, 11111111, 3, 'Tiền Mặt', 0, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -182,7 +189,37 @@ CREATE TABLE `quyen` (
 INSERT INTO `quyen` (`id`, `name`, `url`, `remove`) VALUES
 (1, 'Dashboard', 'dashboard', 0),
 (2, 'Quản lý nhân viên', 'cate/employees/view/danh-sach-nhan-vien.html', 0),
-(3, 'test xoa', 'ascasca', 1);
+(3, 'test xoa', 'ascasca', 1),
+(4, 'Sơ Đồ Phòng', 'phong/so-do-phong.html', 0),
+(5, 'Danh Sách Đặt Phòng', 'cate/dat-phong/danh-sach.html', 0),
+(6, 'Đặt Phòng có trước', 'phong/dat-phong', 0),
+(7, 'Danh Sách Nhân Viên', 'cate/employees/view/danh-sach-nhan-vien.html', 0),
+(8, 'Thêm Mới Nhân Viên', 'cate/employees/add/nhan-vien.html', 0),
+(9, 'Xem thông tin cá nhân', 'user/profile', 0),
+(10, 'Phân Quyền Nhân Viên', 'cate/employees/phan-quyen', 0),
+(11, 'Xoá Nhân Viên', 'cate/employees/del', 0),
+(12, 'Danh Sách Khách Hàng', 'cate/customer/view/danh-sach-khach-hang.html', 0),
+(13, 'Thêm Mới Khách Hàng', 'cate/customer/add/khach-hang.html', 0),
+(14, 'Chỉnh sửa khách Hàng', 'cate/customer/edit', 0),
+(15, 'Xoá Khách Hàng', 'cate/customer/del', 0),
+(16, 'Thêm Quyền Mới', 'setting/quyen/them-quyen-moi.html', 0),
+(17, 'Danh Sách Quyền', 'setting/quyen/view/danh-sach.html', 0),
+(18, 'Chỉnh sửa quyền', 'setting/quyen/edit', 0),
+(19, 'Danh Sách Đặt Phòng', 'cate/phong/view/danh-sach-phong.html', 0),
+(20, 'Chi tiết đặt phòng', 'cate/dat-phong/chi-tiet', 0),
+(21, 'Đặt phòng mới', 'cate/dat-phong/dat-phong-moi.html', 0),
+(22, 'Chỉ sửa phòng', 'cate/phong/edit', 0),
+(23, 'Thêm Phòng Mới', 'cate/phong/add/them-phong.html', 0),
+(24, 'Xoá phòng', 'cate/phong/del', 0),
+(25, 'Cập Nhật Thông Tin Khách Sạn', 'setting/info/thong-tin-khach-san.html', 0),
+(26, 'Danh Sách Hạng Phòng', 'setting/hang-phong/view/hang-phong.html', 0),
+(27, 'Thêm Hạng Phòng', 'setting/hang-phong/add/hang-phong.html', 0),
+(28, 'Chỉnh Sửa Hạng Phòng', 'setting/hang-phong/edit', 0),
+(29, 'Xoá Hạng Phòng', 'setting/hang-phong/del', 0),
+(30, 'Danh Sách Lầu', 'setting/lau/view/tang-lau.html', 0),
+(31, 'Thêm Lầu Mới', 'setting/lau/add/tang-lau.html', 0),
+(32, 'Chỉnh sửa lầu', 'setting/lau/edit/', 0),
+(33, 'Xoá Lầu', 'setting/lau/del', 0);
 
 -- --------------------------------------------------------
 
@@ -208,8 +245,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `nameKhongDau`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `remove`, `quyen`) VALUES
-(1, 'Châu Minh Thiện', 'chau-minh-thien', 'chauminhthien0212@gmail.com', '$2y$10$limtzCE7nM7jIm7peZh07uEHQrh8VnOYJ3RManFOQbwWQJRk6ut/C', 'jDpdLHFU5gKkw7T6FXY9zD9e268AY306hcgMGAwRlqMAYysUZ95WQSrfh8iQ', '2018-03-03 02:57:52', '2018-02-27 07:50:42', 0, '1'),
-(2, 'Minh Thiện', 'minh-thien', 'minhthien1305@gmail.com', '$2y$10$limtzCE7nM7jIm7peZh07uEHQrh8VnOYJ3RManFOQbwWQJRk6ut/C', '6XUl36TYN6GjanPndKosL6gkdni6lDPztsxVcNE2f41vpdAheU1gei4zdr6z', '2018-03-04 08:09:59', '2018-03-04 01:09:59', 0, '1,2');
+(1, 'Châu Minh Thiện', 'chau-minh-thien', 'chauminhthien0212@gmail.com', '$2y$10$limtzCE7nM7jIm7peZh07uEHQrh8VnOYJ3RManFOQbwWQJRk6ut/C', 'PPGtwJsEmTUhxYbBSrIPseu5UiUBbcJ6lP4XJAQ9mJUqs4NNnCO21lP4Mxf7', '2018-03-07 06:41:06', '2018-02-27 07:50:42', 0, '1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33'),
+(2, 'Minh Thiện', 'minh-thien', 'minhthien1305@gmail.com', '$2y$10$limtzCE7nM7jIm7peZh07uEHQrh8VnOYJ3RManFOQbwWQJRk6ut/C', '6XUl36TYN6GjanPndKosL6gkdni6lDPztsxVcNE2f41vpdAheU1gei4zdr6z', '2018-03-07 04:04:55', '2018-03-06 21:04:55', 0, '1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18');
 
 --
 -- Indexes for dumped tables
@@ -276,7 +313,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `danhsachdatphong`
 --
 ALTER TABLE `danhsachdatphong`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `hangphong`
 --
@@ -301,7 +338,7 @@ ALTER TABLE `phong`
 -- AUTO_INCREMENT for table `quyen`
 --
 ALTER TABLE `quyen`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `users`
 --
