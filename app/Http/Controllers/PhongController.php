@@ -101,7 +101,7 @@ class PhongController extends Controller
                                     </div>
                                 </div>
                                 <div class=" mg0 broom-ct clearfix">
-                                    '. ( ($p->isU == 1) ? '<div class="broom-ct-it" title="Khách hàng: aaa"><span>aaa &nbsp;</span></div>
+                                    '. ( ($p->isU == 1) ? '<div class="broom-ct-it" title="Khách hàng: Đã Đặt"><span>Đã Đặt</span></div>
                                                 <div class="broom-ct-it" title="Tổng thời gian khách ở: 1h 2p">
                                                     <i class="fa fa-clock-o "></i><span> 1h 2p</span>
                                                 </div>

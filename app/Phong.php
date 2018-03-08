@@ -13,4 +13,8 @@ class Phong extends Model
     public function getCustomer(){
     	return $this->belongsTo('App\DatPhong','idPhong', 'id');
     }
+
+    public function getHangPhong(){
+        return $this->belongsTo('App\HangPhong','idHangPhong', 'id');
+    }
 }

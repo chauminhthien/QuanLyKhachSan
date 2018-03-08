@@ -140,6 +140,10 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 			Route::get('/danh-sach.html', 'DatPhongController@getViewDatPhong');
 			Route::get('/chi-tiet/{id}/dat-phong.html', 'DatPhongController@getViewDetailDatPhong');
 			Route::get('/dat-phong-moi.html', 'DatPhongController@getNewDatPhong');
+			Route::post('/dat-phong-moi.html', 'DatPhongController@postNewDatPhong');
+
+			Route::get('/in/{id}/in-hoa-don.html', 'DatPhongController@getInHoaDon');
+
 			
 		});
 		
@@ -155,5 +159,7 @@ Route::group(['prefix' => 'ajax'],function(){
 	Route::get('/getViewPhong/{id}', 'PhongController@getViewSdPhong');
 	Route::get('/getViewMorePhong/{id}/{st}', 'PhongController@getViewMorePhong');
 	Route::get('/postEditStPhong/{id}/{data}', 'PhongController@postEditStPhong');
-	
+	Route::get('/getPhongDP/{id}/{idp}', 'DatPhongController@getPhongDP');
+	Route::get('/getInfoPhongDP/{id}', 'DatPhongController@getInfoPhongDP');
+
 });

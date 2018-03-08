@@ -42,7 +42,7 @@ class UserMiddleware
                     view()->share('userAdmin', Auth::user());
                     return $next($request);
                 }else{
-                    die();return redirect()->back()->with(['modal-danger' => 'Bạn Chưa Có Quyền Truy Cập']);
+                    return redirect()->back()->with(['modal-danger' => 'Bạn Chưa Có Quyền Truy Cập']);
                 }
             
             }else{
