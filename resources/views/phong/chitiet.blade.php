@@ -21,7 +21,11 @@
     <div class="box box-primary">
       <div class="box-header with-border">
         <a target="_blank" href="../cate/dat-phong/in/{{$datphong->id}}/in-hoa-don.html" class="btn btn-primary btn-flat" > In Hoá Đơn</a>
-        <a href="../cate/dat-phong/thanh-toan/{{$datphong->id}}" class="btn btn-primary btn-flat" > Trả Phòng</a>
+        <?php
+          if($datphong->st == 0)
+            echo '<a target="_blank" href="../cate/dat-phong/thanh-toan/'.$datphong->id.'" class="btn btn-primary btn-flat" > Trả Phòng</a>';
+        ?>
+        
       </div><!-- /.box-header -->
       <!-- form start -->
       @if(session('thongbao'))

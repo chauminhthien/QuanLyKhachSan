@@ -79,5 +79,23 @@ class DatPhongController extends Controller
         return view('hoadon.invoice', ['info' => $info, 'datphong' => $datphong]);
     }
 
+    public function getThanhToan($id){
+        $datphong = DatPhong::find($id);
+        $idPhong = $datphong->idPhong;
+
+        $phong = Phong::find($idPhong);
+
+        $datphong->tgiandi = time();
+        $datphong->st = 1;
+
+        $phong->isU = 0;
+        $phong->st  = 2;
+
+        $datphong->save();
+        $phong->save();
+
+        return redirect('cate/dat-phong/in/'.$id.'/in-hoa-don.html');
+    }
+
     
 }

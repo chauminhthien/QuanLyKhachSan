@@ -15,6 +15,10 @@ Route::get('/', function () {
     return redirect('/dashboard');
 });
 
+Route::get('/update.html', function () {
+	return redirect()->back()->with(['modal-danger' => 'Chức Năng Đang Được Cập Nhật!']);
+});
+
 Route::get('/dang-nhap.html', 'UserController@getLogin');
 Route::post('/dang-nhap.html', 'UserController@postLogin');
 Route::get('/dang-xuat.html', 'UserController@getDangXuat');
@@ -33,6 +37,15 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 		Route::get('/dat-phong/{id}/dat-phong-moi.html', 'DatPhongController@getNewDatPhongById');
 		
 	});
+
+	Route::group(['prefix' => 'thong-ke'],function(){
+
+		Route::get('/thong-ke-dat-phong.html', 'ThongKeController@getThongKeDatPhong');
+		Route::get('/thong-ke-doanh-thu.html', 'ThongKeController@getThongKeDoanhThu');
+		
+	});
+
+	
 
 	Route::group(['prefix' => 'user'],function(){
 
@@ -143,6 +156,8 @@ Route::group(['prefix' => '/', 'middleware' => 'userMiddleware' ],function(){
 			Route::post('/dat-phong-moi.html', 'DatPhongController@postNewDatPhong');
 
 			Route::get('/in/{id}/in-hoa-don.html', 'DatPhongController@getInHoaDon');
+			Route::get('/thanh-toan/{id}', 'DatPhongController@getThanhToan');
+			
 
 			
 		});
@@ -161,5 +176,9 @@ Route::group(['prefix' => 'ajax'],function(){
 	Route::get('/postEditStPhong/{id}/{data}', 'PhongController@postEditStPhong');
 	Route::get('/getPhongDP/{id}/{idp}', 'DatPhongController@getPhongDP');
 	Route::get('/getInfoPhongDP/{id}', 'DatPhongController@getInfoPhongDP');
+	Route::get('/postThongKe', 'ThongKeController@postThongKe');
+	Route::get('/postThongKeDoanhThu', 'ThongKeController@postThongKeDoanhThu');
+
+	
 
 });

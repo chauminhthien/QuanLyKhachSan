@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2018 at 07:43 AM
+-- Generation Time: Mar 09, 2018 at 05:20 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -74,7 +74,8 @@ CREATE TABLE `danhsachdatphong` (
 --
 
 INSERT INTO `danhsachdatphong` (`id`, `name`, `cmnd`, `phone`, `email`, `tgianden`, `tgiandi`, `idPhong`, `pthucthanhtoan`, `tientratruoc`, `remove`, `st`, `phongdoi`) VALUES
-(1, 'Châu Minh Thiện', '123456789', '0963501008', 'minhthien1305@gmail.com', 11111, 11111111, 3, 'Tiền Mặt', 0, 0, 0, '');
+(3, 'Châu Minh Thiện', '572 luy ban bich', '7273842858', 'chauminhthien0212@gmail.com', 1520587649, 1520587668, 1, 'Tiền Mặt', 0, 0, 1, NULL),
+(4, 'Minh Thiện', '0168227093', '01682273829', 'minhthien1305@gmail.com', 1520590835, NULL, 2, 'Tiền Mặt', 0, 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -165,8 +166,8 @@ CREATE TABLE `phong` (
 
 INSERT INTO `phong` (`id`, `name`, `nameKhongDau`, `st`, `remove`, `gia`, `idHangPhong`, `idLau`, `isU`) VALUES
 (1, '101', '101', 0, 0, 150000, 1, 1, 0),
-(2, 'A101', 'a101', 0, 0, 150000, 1, 2, 0),
-(3, 'test xoá', 'test-xoa', 3, 0, 150000, 1, 1, 1),
+(2, 'A101', 'a101', 0, 0, 150000, 1, 2, 1),
+(3, 'test xoá', 'test-xoa', 0, 0, 150000, 1, 1, 0),
 (4, 'Minh Thiện', 'minh-thien', 0, 0, 1500000, 3, 2, 0);
 
 -- --------------------------------------------------------
@@ -219,7 +220,11 @@ INSERT INTO `quyen` (`id`, `name`, `url`, `remove`) VALUES
 (30, 'Danh Sách Lầu', 'setting/lau/view/tang-lau.html', 0),
 (31, 'Thêm Lầu Mới', 'setting/lau/add/tang-lau.html', 0),
 (32, 'Chỉnh sửa lầu', 'setting/lau/edit/', 0),
-(33, 'Xoá Lầu', 'setting/lau/del', 0);
+(33, 'Xoá Lầu', 'setting/lau/del', 0),
+(34, 'In Hoá Đơn', 'cate/dat-phong/in', 0),
+(35, 'Trả Phòng', 'cate/dat-phong/thanh-toan', 0),
+(36, 'Xem Thống Kê Đặt Phòng', 'thong-ke/thong-ke-dat-phong.html', 0),
+(37, 'Xem Thống Kê Doanh Thu', 'thong-ke/thong-ke-doanh-thu.html', 0);
 
 -- --------------------------------------------------------
 
@@ -245,7 +250,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `nameKhongDau`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `remove`, `quyen`) VALUES
-(1, 'Châu Minh Thiện', 'chau-minh-thien', 'chauminhthien0212@gmail.com', '$2y$10$limtzCE7nM7jIm7peZh07uEHQrh8VnOYJ3RManFOQbwWQJRk6ut/C', 'PPGtwJsEmTUhxYbBSrIPseu5UiUBbcJ6lP4XJAQ9mJUqs4NNnCO21lP4Mxf7', '2018-03-07 06:41:06', '2018-02-27 07:50:42', 0, '1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33'),
+(1, 'Châu Minh Thiện', 'chau-minh-thien', 'chauminhthien0212@gmail.com', '$2y$10$limtzCE7nM7jIm7peZh07uEHQrh8VnOYJ3RManFOQbwWQJRk6ut/C', 'cQzWQbKPWJtwJUNWgTGou8IdmYP0Inl466XTPslO29n8SrOQERrRI6AUCyuF', '2018-03-09 16:01:01', '2018-02-27 07:50:42', 0, '1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37'),
 (2, 'Minh Thiện', 'minh-thien', 'minhthien1305@gmail.com', '$2y$10$limtzCE7nM7jIm7peZh07uEHQrh8VnOYJ3RManFOQbwWQJRk6ut/C', '6XUl36TYN6GjanPndKosL6gkdni6lDPztsxVcNE2f41vpdAheU1gei4zdr6z', '2018-03-07 04:04:55', '2018-03-06 21:04:55', 0, '1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18');
 
 --
@@ -313,7 +318,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `danhsachdatphong`
 --
 ALTER TABLE `danhsachdatphong`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `hangphong`
 --
@@ -338,7 +343,7 @@ ALTER TABLE `phong`
 -- AUTO_INCREMENT for table `quyen`
 --
 ALTER TABLE `quyen`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT for table `users`
 --
