@@ -90,4 +90,25 @@ function stripUnicode($str){
 }
 
 
+function getTime($timeSt = 0, $timeEnd = 0){
+	$d = date('d', $timeSt) - date('d', $timeEnd);
+	$m = date('m', $timeSt) - date('m', $timeEnd);
+	$Y = date('Y', $timeSt) - date('Y', $timeEnd);
+	$H = date('h', $timeSt) - date('h', $timeEnd);
+	$i = date('i', $timeSt) - date('i', $timeEnd);
+	$s = date('s', $timeSt) - date('s', $timeEnd);
+
+	$txt = '';
+
+	if($Y > 0) $txt .= $Y . ' Năm ';
+	if($m > 0) $txt .= $m . ' Tháng ';
+	if($d > 0) $txt .= $d . ' Ngày ';
+	if($H > 0) $txt .= $H . ' Giờ ';
+	if($i > 0) $txt .= $i . ' Phút ';
+	if($s > 0) $txt .= $s . ' Giây';
+	
+	return $txt;
+}
+
+
 ?>

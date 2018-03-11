@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2018 at 05:20 PM
+-- Generation Time: Mar 11, 2018 at 07:38 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -165,10 +165,21 @@ CREATE TABLE `phong` (
 --
 
 INSERT INTO `phong` (`id`, `name`, `nameKhongDau`, `st`, `remove`, `gia`, `idHangPhong`, `idLau`, `isU`) VALUES
-(1, '101', '101', 0, 0, 150000, 1, 1, 0),
-(2, 'A101', 'a101', 0, 0, 150000, 1, 2, 1),
-(3, 'test xoá', 'test-xoa', 0, 0, 150000, 1, 1, 0),
-(4, 'Minh Thiện', 'minh-thien', 0, 0, 1500000, 3, 2, 0);
+(1, 'A101', 'a101', 0, 0, 150000, 1, 1, 0),
+(2, 'A102', 'a102', 0, 0, 150000, 1, 2, 1),
+(3, 'A103', 'a103', 0, 0, 1500000, 3, 2, 0),
+(4, 'A104', 'a104', 0, 0, 1500000, 3, 2, 0),
+(5, 'B101', 'b101', 3, 0, 150000, 1, 1, 0),
+(6, 'B102', 'b102', 0, 0, 200000, 2, 3, 0),
+(7, 'B103', 'b103', 0, 0, 150000, 1, 1, 0),
+(8, 'B104', 'b104', 3, 0, 1500000, 3, 1, 0),
+(9, 'C101', 'c101', 0, 0, 200000, 2, 1, 0),
+(10, 'C102', 'c102', 0, 0, 150000, 1, 1, 0),
+(11, 'C103', 'c103', 2, 0, 150000, 1, 1, 0),
+(12, 'C104', 'c104', 0, 0, 150000, 1, 1, 0),
+(13, 'D101', 'd101', 0, 0, 150000, 1, 1, 0),
+(14, 'D102', 'd102', 0, 0, 200000, 2, 1, 0),
+(15, 'D103', 'd103', 0, 0, 150000, 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -250,8 +261,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `nameKhongDau`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `remove`, `quyen`) VALUES
-(1, 'Châu Minh Thiện', 'chau-minh-thien', 'chauminhthien0212@gmail.com', '$2y$10$limtzCE7nM7jIm7peZh07uEHQrh8VnOYJ3RManFOQbwWQJRk6ut/C', 'cQzWQbKPWJtwJUNWgTGou8IdmYP0Inl466XTPslO29n8SrOQERrRI6AUCyuF', '2018-03-09 16:01:01', '2018-02-27 07:50:42', 0, '1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37'),
-(2, 'Minh Thiện', 'minh-thien', 'minhthien1305@gmail.com', '$2y$10$limtzCE7nM7jIm7peZh07uEHQrh8VnOYJ3RManFOQbwWQJRk6ut/C', '6XUl36TYN6GjanPndKosL6gkdni6lDPztsxVcNE2f41vpdAheU1gei4zdr6z', '2018-03-07 04:04:55', '2018-03-06 21:04:55', 0, '1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18');
+(1, 'Châu Minh Thiện', 'chau-minh-thien', 'chauminhthien0212@gmail.com', '$2y$10$limtzCE7nM7jIm7peZh07uEHQrh8VnOYJ3RManFOQbwWQJRk6ut/C', 'zRXXSkwXHhIthtZJYGzDqhnZjUP8belunhQfL7b5Sn39rR5lcsXqXNNa7iKI', '2018-03-10 12:05:44', '2018-02-27 07:50:42', 0, '1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37'),
+(2, 'Minh Thiện', 'minh-thien', 'minhthien1305@gmail.com', '$2y$10$limtzCE7nM7jIm7peZh07uEHQrh8VnOYJ3RManFOQbwWQJRk6ut/C', 'PvgWZXAjrqR9ephgchBY223RIDMwXRT24EnzrIhXVdZIVC30LopHForj2crV', '2018-03-10 16:30:35', '2018-03-06 21:04:55', 0, '1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18');
 
 --
 -- Indexes for dumped tables
@@ -338,7 +349,7 @@ ALTER TABLE `lau`
 -- AUTO_INCREMENT for table `phong`
 --
 ALTER TABLE `phong`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `quyen`
 --

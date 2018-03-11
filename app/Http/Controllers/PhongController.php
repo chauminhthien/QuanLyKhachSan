@@ -101,13 +101,13 @@ class PhongController extends Controller
                                     </div>
                                 </div>
                                 <div class=" mg0 broom-ct clearfix">
-                                    '. ( ($p->isU == 1) ? '<div class="broom-ct-it" title="Khách hàng: Đã Đặt"><span>Đã Đặt</span></div>
+                                    '. ( ($p->isU == 1) ? '<div class="broom-ct-it" title="Khách hàng: Đã Đặt"><span>'.$p->getDatPhong($p->id)->name.'</span></div>
                                                 <div class="broom-ct-it" title="Tổng thời gian khách ở: 1h 2p">
-                                                    <i class="fa fa-clock-o "></i><span> 1h 2p</span>
+                                                    <i class="fa fa-clock-o "></i><span>'. getTime($p->getDatPhong($p->id)->tgianden, time()) .'</span>
                                                 </div>
                                                 <div class="broom-ct-it" title="Thời gian đến - Thời gian dự kiến đi">
                                                     <i class="fa fa-calendar"></i>
-                                                    <span> 05/03-06/03/2018</span>
+                                                    <span>'. date('d-m-Y', $p->getDatPhong($p->id)->tgianden)  .'</span>
                                                 </div>
                                                 <div class="broom-ct-icon broom-ct-icon-status ">
                                                 </div>' : '') .'
@@ -149,12 +149,12 @@ class PhongController extends Controller
                     </div>';
         }else if($phong->isU == 1){
             $txt .= '<div class="col-md-4 col-sm-4 col-xs-6">
-                        <a href="../cate/dat-phong/chi-tiet/'. $id .'/dat-phong.html" class="btn waves-effect waves-light btn-menu"  title="Đặt phòng">
+                        <a href="../cate/dat-phong/chi-tiet/'.$phong->getDatPhong($phong->id)->id.'/dat-phong.html" class="btn waves-effect waves-light btn-menu"  title="Đặt phòng">
                             <i class="sdp-icon-menu icon-add-song fa fa-eye"></i>Chi Tiết
                         </a>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-6">
-                        <a href="../cate/dat-phong/chi-tiet/'. $id .'/dat-phong.html" class="btn waves-effect waves-light btn-menu"  title="Đặt phòng">
+                        <a href="../cate/dat-phong/chi-tiet/'.$phong->getDatPhong($phong->id)->id.'/dat-phong.html" class="btn waves-effect waves-light btn-menu"  title="Đặt phòng">
                             <i class="sdp-icon-menu icon-add-song fa fa-sign-out"></i>Trả Phòng
                         </a>
                     </div>
